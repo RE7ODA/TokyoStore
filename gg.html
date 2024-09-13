@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <style>
+      .product {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .product img {
+        max-width: 100px;
+        margin-right: 20px;
+      }
+
+      .product .info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product .info h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .product .info p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="list"></div>
+    </div>
+    <script>
+      const ps4 = [
+        {
+          id: 1,
+          img: "login.jpg",
+          name: "PS4 1",
+          desc: "ps4 decription",
+          price: 300,
+        },
+        {
+          id: 2,
+          img: "login.jpg",
+          name: "PS4 2",
+          desc: "ps4 decription",
+          price: 400,
+        },
+        {
+          id: 3,
+          img: "login.jpg",
+          name: "PS4 3",
+          desc: "ps4 decription",
+          price: 500,
+        },
+        {
+          id: 4,
+          img: "login.jpg",
+          name: "PS4 4",
+          desc: "ps4 decription",
+          price: 600,
+        },
+      ];
+
+      const listContainer = document.querySelector(".list");
+
+      ps4.forEach((product) => {
+        // Create the product container
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+
+        // Create the image element
+        const imgElement = document.createElement("img");
+        imgElement.src = product.img;
+        imgElement.alt = product.name;
+
+        // Create the info container
+        const infoDiv = document.createElement("div");
+        infoDiv.classList.add("info");
+
+        // Add product name
+        const nameElement = document.createElement("h2");
+        nameElement.textContent = product.name;
+
+        // Add product description
+        const descElement = document.createElement("p");
+        descElement.textContent = product.desc;
+
+        // Add product price
+        const priceElement = document.createElement("p");
+        priceElement.textContent = $${product.price};
+
+        // Append name, description, and price to the info div
+        infoDiv.appendChild(nameElement);
+        infoDiv.appendChild(descElement);
+        infoDiv.appendChild(priceElement);
+
+        // Append image and info to the product div
+        productDiv.appendChild(imgElement);
+        productDiv.appendChild(infoDiv);
+
+        // Append product div to the list container
+        listContainer.appendChild(productDiv);
+      });
+    </script>
+  </body>
+</html>
